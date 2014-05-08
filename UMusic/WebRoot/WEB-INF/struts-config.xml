@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="userForm" type="com.luyi.umusic.web.UserForm" />
+    <form-bean name="shareMForm" type="com.luyi.umusic.web.ShareMForm" />
+    <form-bean name="sharePForm" type="com.luyi.umusic.web.SharePForm" />
+    <form-bean name="feedbackForm" type="com.luyi.umusic.web.FeedbackForm" />
+    <form-bean name="adminForm" type="com.luyi.umusic.web.AdminForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards>
+  
+  <forward name="umusic.home" path="/home.jsp" />
+  <forward name="umusic.login" path="/login.jsp" />
+  <forward name="umusic.share.music" path="/sharem.jsp" />
+  <forward name="umusic.share.photo" path="/sharep.jsp" />
+  <forward name="umusic.regist" path="/reg.jsp" />
+  <forward name="umusic.musiclib" path="/musiclib.jsp" />
+  <forward name="umusic.useredit" path="/useredit.jsp" />
+  <forward name="umusic.adminlogin" path="/adminlogin.jsp" />
+  <forward name="umusic.admin" path="/admin.jsp" />
+  <forward name="umusic.admininfo" path="/admininfo.jsp" />
+  <forward name="umusic.readmusic" path="/shareM.do?method=all" redirect="true"/>
+  <forward name="umusic.readfeed" path="/feedback.do?method=all" redirect="true"/>
+  </global-forwards>
+  
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/login.jsp"
+      name="userForm"
+      parameter="method"
+      path="/user"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+
+    </action>
+    <action
+      attribute="shareMForm"
+      input="/sharem.jsp"
+      name="shareMForm"
+      parameter="method"
+      path="/shareM"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+    </action>
+    <action
+      attribute="sharePForm"
+      input="/sharep.jsp"
+      name="sharePForm"
+      parameter="method"
+      path="/shareP"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+    </action>
+    <action
+      attribute="feedbackForm"
+      name="feedbackForm"
+      path="/feedback"
+      parameter="method"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      cancellable="true" />
+    <action
+      attribute="adminForm"
+      input="/form/admin.jsp"
+      name="adminForm"
+      parameter="method"
+      path="/admin"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      cancellable="true" />
+  </action-mappings>
+
+  <message-resources parameter="com.luyi.umusic.ApplicationResources" />
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/applicationContext.xml"/>
+  </plug-in>
+</struts-config>
+

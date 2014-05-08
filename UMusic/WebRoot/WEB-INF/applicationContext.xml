@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="gb2312"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		<property name="url"
+			value="jdbc:sqlserver://localhost:1433;databaseName=MusicShare">
+		</property>
+		<property name="username" value="sa"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop> 
+				<prop key="hibernate.show_sql">
+					true
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/luyi/umusic/model/Admin.hbm.xml</value>
+				<value>com/luyi/umusic/model/Feedback.hbm.xml</value>
+				<value>com/luyi/umusic/model/Guestbook.hbm.xml</value>
+				<value>com/luyi/umusic/model/Music.hbm.xml</value>
+				<value>com/luyi/umusic/model/PhotoSet.hbm.xml</value>
+				<value>com/luyi/umusic/model/UserInfo.hbm.xml</value></list>
+		</property></bean>
+	<bean id="AdminDAOHibernate" class="com.luyi.umusic.dao.hibernate.AdminDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FeedbackDAOHibernate" class="com.luyi.umusic.dao.hibernate.FeedbackDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="GuestbookDAOHibernate"
+		class="com.luyi.umusic.dao.hibernate.GuestbookDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="MusicDAOHibernate" class="com.luyi.umusic.dao.hibernate.MusicDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PhotoSetDAOHibernate" class="com.luyi.umusic.dao.hibernate.PhotoSetDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserInfoDAOHibernate" class="com.luyi.umusic.dao.hibernate.UserInfoDAOHibernate">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userManager" class="com.luyi.umusic.service.impl.UMusicManagerImpl">
+		<property name="userInfoDAOHibernate">
+			<ref bean="UserInfoDAOHibernate"/>
+		</property>
+	</bean>
+	<bean id="musicManager" class="com.luyi.umusic.service.impl.UMusicManagerImpl">
+		<property name="musicDAOHibernate">
+			<ref bean="MusicDAOHibernate"/>
+		</property>
+	</bean>
+	<bean id="photoSetManager" class="com.luyi.umusic.service.impl.UMusicManagerImpl">
+		<property name="photoSetDAOHibernate">
+			<ref bean="PhotoSetDAOHibernate"/>
+		</property>
+	</bean>
+	<bean id="feedBackManager" class="com.luyi.umusic.service.impl.UMusicManagerImpl">
+		<property name="feedbackDAOHibernate">
+			<ref bean="FeedbackDAOHibernate"/>
+		</property>
+	</bean>
+	<bean id="adminManager" class="com.luyi.umusic.service.impl.UMusicManagerImpl">
+		<property name="adminDAOHibernate">
+			<ref bean="AdminDAOHibernate"/>
+		</property>
+	</bean>
+	<bean name="/user" class="com.luyi.umusic.web.action.UserAction">
+		<property name="UMusicManagerImpl">
+			<ref bean="userManager"/>
+		</property>
+	</bean>
+	<bean name="/shareM" class="com.luyi.umusic.web.action.ShareMAction">
+		<property name="UMusicManagerImpl">
+			<ref bean="musicManager"/>
+		</property>
+	</bean>
+	<bean name="/shareP" class="com.luyi.umusic.web.action.SharePAction">
+		<property name="UMusicManagerImpl">
+			<ref bean="photoSetManager"/>
+		</property>
+	</bean>
+	<bean name="/feedback" class="com.luyi.umusic.web.action.FeedbackAction">
+		<property name="UMusicManagerImpl">
+			<ref bean="feedBackManager"/>
+		</property>
+	</bean>
+	<bean name="/admin" class="com.luyi.umusic.web.action.AdminAction">
+		<property name="UMusicManagerImpl">
+			<ref bean="adminManager"/>
+		</property>
+	</bean>
+</beans>

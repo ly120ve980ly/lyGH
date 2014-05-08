@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/user.do" location="50,50" dimension="362,104" />
+  <StrutsActivity path="/shareM.do" location="650,250" dimension="281,104" />
+  <StrutsActivity path="/shareP.do" location="650,850" dimension="276,104" />
+  <StrutsActivity path="/feedback.do" location="650,450" dimension="292,104" />
+  <StrutsActivity path="/admin.do" location="50,1250" dimension="273,104" />
+  <StrutsActivity path="umusic.home;6" location="50,650" dimension="125,87" />
+  <StrutsActivity path="umusic.login;6" location="350,650" dimension="121,87" />
+  <StrutsActivity path="umusic.share.music;6" location="650,650" dimension="160,87" />
+  <StrutsActivity path="umusic.share.photo;6" location="950,650" dimension="162,87" />
+  <StrutsActivity path="umusic.regist;6" location="50,850" dimension="125,87" />
+  <StrutsActivity path="umusic.musiclib;6" location="350,850" dimension="139,87" />
+  <StrutsActivity path="umusic.useredit;6" location="50,450" dimension="139,87" />
+  <StrutsActivity path="umusic.adminlogin;6" location="50,1050" dimension="157,87" />
+  <StrutsActivity path="umusic.admin;6" location="950,1250" dimension="128,87" />
+  <StrutsActivity path="umusic.admininfo;6" location="1250,250" dimension="150,87" />
+  <StrutsActivity path="/login.jsp" location="50,250" dimension="86,53" />
+  <StrutsActivity path="/sharem.jsp" location="350,1050" dimension="100,53" />
+  <StrutsActivity path="/sharep.jsp" location="650,1050" dimension="97,53" />
+  <StrutsActivity path="/form/admin.jsp" location="650,1250" dimension="126,53" />
+  <StrutsActivity path="/home.jsp" location="650,50" dimension="90,53" />
+  <StrutsActivity path="/reg.jsp" location="950,50" dimension="77,53" />
+  <StrutsActivity path="/musiclib.jsp" location="350,450" dimension="104,53" />
+  <StrutsActivity path="/useredit.jsp" location="1020,1080" dimension="104,53" />
+  <StrutsActivity path="/adminlogin.jsp" location="50,1450" dimension="122,53" />
+  <StrutsActivity path="/admin.jsp" location="350,1450" dimension="93,53" />
+  <StrutsActivity path="/admininfo.jsp" location="1250,550" dimension="115,53" />
+  <StrutsActivity path="/temp2.jsp" location="1250,950" dimension="94,53" />
+  <StrutsActivity path="/t.jsp" location="1250,1150" dimension="61,53" />
+  <StrutsActivity path="umusic.readfeed;6" location="1250,750" dimension="242,87" />
+  <StrutsActivity path="umusic.readmusic;6" />
+  <StrutsTransition id="umusic.temp2;6,null,/admininfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1307,750" />
+      <AbsolutePoint location="1307,603" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.readfeed;6,null,/UMusic/feedback.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1371,837" />
+      <AbsolutePoint location="1371,1350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.useredit;6,null,/useredit.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="189,488" />
+      <AbsolutePoint location="280,488" />
+      <AbsolutePoint location="280,1118" />
+      <AbsolutePoint location="1020,1118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.readfeed;6,null,/feedback.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1380,750" />
+      <AbsolutePoint location="1380,502" />
+      <AbsolutePoint location="942,502" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.admininfo;6,null,/admininfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="0,0" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sharep.jsp,null,/shareP.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="698,1050" />
+      <AbsolutePoint location="698,954" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.admin;6,null,/admin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1014,1337" />
+      <AbsolutePoint location="1014,1476" />
+      <AbsolutePoint location="443,1476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.readmusic;6,null,/shareM.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="790,302" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.share.music;6,null,/sharem.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,693" />
+      <AbsolutePoint location="624,693" />
+      <AbsolutePoint location="624,1076" />
+      <AbsolutePoint location="450,1076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.temp2;6,null,/t.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1359,837" />
+      <AbsolutePoint location="1359,1176" />
+      <AbsolutePoint location="1311,1176" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.login;6,null,/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="469,650" />
+      <AbsolutePoint location="469,276" />
+      <AbsolutePoint location="136,276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/admin.jsp,null,/admin.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1276" />
+      <AbsolutePoint location="323,1276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.adminlogin;6,null,/adminlogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1093" />
+      <AbsolutePoint location="-25,1093" />
+      <AbsolutePoint location="-25,1476" />
+      <AbsolutePoint location="50,1476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.regist;6,null,/reg.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="175,893" />
+      <AbsolutePoint location="250,893" />
+      <AbsolutePoint location="250,578" />
+      <AbsolutePoint location="988,578" />
+      <AbsolutePoint location="988,103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.temp2;6,null,/temp2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1297,837" />
+      <AbsolutePoint location="1297,950" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/sharem.jsp,null,/shareM.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,1076" />
+      <AbsolutePoint location="310,1076" />
+      <AbsolutePoint location="310,348" />
+      <AbsolutePoint location="650,348" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.home;6,null,/home.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="151,650" />
+      <AbsolutePoint location="151,199" />
+      <AbsolutePoint location="695,199" />
+      <AbsolutePoint location="695,103" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.share.photo;6,null,/sharep.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1031,737" />
+      <AbsolutePoint location="1031,1076" />
+      <AbsolutePoint location="747,1076" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="umusic.musiclib;6,null,/musiclib.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="489,893" />
+      <AbsolutePoint location="564,893" />
+      <AbsolutePoint location="564,476" />
+      <AbsolutePoint location="454,476" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.jsp,null,/user.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="93,250" />
+      <AbsolutePoint location="93,154" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+
